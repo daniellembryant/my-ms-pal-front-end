@@ -5,6 +5,7 @@ import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import UsersShow from "../views/UsersShow.vue";
+import GroupsIndex from "../views/GroupsIndex.vue";
 
 Vue.use(VueRouter);
 
@@ -39,8 +40,13 @@ const routes = [
   },
   {
     path: "/users/:id",
-    name: "users-show",
+    name: "user-show",
     component: UsersShow,
+  },
+  {
+    path: "/groups",
+    name: "groups",
+    component: GroupsIndex,
   },
 ];
 

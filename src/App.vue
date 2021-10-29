@@ -7,7 +7,9 @@
       | -->
       <span v-if="isLoggedIn()">
         <!-- Need to figure out how to link profile page to user show page-->
-        <router-link :to="`/users/${user.id}`">My Profile</router-link>
+        <router-link :to="`/users/${currentUser.id}`">My Profile</router-link>
+        |
+        <router-link to="/groups">Groups</router-link>
         |
         <router-link to="/logout">Logout</router-link>
       </span>
@@ -49,13 +51,13 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      user: {},
+      currentUser: {},
     };
   },
   created: function () {
     axios.get(`/users/${this.$route.params.id}`).then((response) => {
       console.log(response.data);
-      this.user = response.data;
+      this.currentUser = response.data;
     });
   },
   methods: {
