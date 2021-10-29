@@ -1,42 +1,42 @@
 <template>
   <div class="users-show">
-    <form v-on:submit.prevent="updateUser()">
-      <h1>Edit Profile</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error" {{ error }}></li>
-      </ul>
-      <div>
-        <label>Name:</label>
-        <input type="text" v-model="editUserParams.name" />
-      </div>
-      <div>
-        <label>Email:</label>
-        <input type="text" v-model="editUserParams.email" />
-      </div>
-      <div>
-        <label>Age Group:</label>
-        <input type="text" v-model="editUserParams.age_group" />
-      </div>
-      <div>
-        <label>Location:</label>
-        <input type="text" v-model="editUserParams.location" />
-      </div>
-      <!-- Need to figure out how to update an image url -->
-      <div>
-        <label>Profile Picture:</label>
-        <input type="text" v-model="editUserParams.image_url" />
-      </div>
-      <input type="submit" value="Update" />
-    </form>
+    <button v-on:click="showUser(currentUser)">Edit Profile</button>
+    <dialog id="edit-profile">
+      <form method="dialog">
+        <h1>Edit Profile</h1>
+        <p>
+          Name:
+          <input type="text" v-model="currentUser.name" />
+        </p>
+        <p>
+          Email:
+          <input type="text" v-model="currentUser.email" />
+        </p>
+        <p>
+          Age Group:
+          <input type="text" v-model="currentUser.age_group" />
+        </p>
+        <p>
+          Location:
+          <input type="text" v-model="currentUser.location" />
+        </p>
+        <p>
+          Profile Picture:
+          <input type="text" v-model="currentUser.image_url" />
+        </p>
+        <button v-on:click="updateUser(currentUser)">Update</button>
+        <button>Close</button>
+      </form>
+    </dialog>
 
     <!-- Need to get group search to work -->
-    Search Group by Name:
+    <!-- Search Group by Name:
     <input v-model="nameFilter" list="names" />
     <datalist id="names">
       <option v-for="group in groups" v-bind:key="group.id">{{ group.name }}</option>
     </datalist>
-    <br />
-    <router-link :to="`/users/${currentUser.id}/edit`" type="button" class="users-show">Edit Profile</router-link>
+    <br /> -->
+    <!-- <router-link :to="`/users/${currentUser.id}/edit`" type="button" class="users-edit">Edit Profile</router-link> -->
     <br />
     <button v-on:click="destroyProfile()">Delete Profile</button>
     <h1>{{ `Welcome back ${currentUser.name}!` }}</h1>
@@ -60,9 +60,6 @@ export default {
       currentUser: {},
       userGroup: {},
       nameFilter: "",
-      groups: [],
-      editUserParams: {},
-      errors: [],
     };
   },
   created: function () {
@@ -76,16 +73,21 @@ export default {
     // });
   },
   methods: {
-    updateUser: function () {
+    updateUser: function (user) {
+      let editUserParams = user;
       axios
-        .patch(`/users/${this.editUserParams.id}`, this.editUserParams)
+        .patch(`/users/${this.user.id}`, editUserParams)
         .then((response) => {
           console.log(response.data);
-          this.$router.push(`/users/${response.data.id}`);
         })
         .catch((error) => {
-          this.errors = error.response.data.errors;
+          console.log(error.response.data.errors);
         });
+    },
+    showUser: function (user) {
+      console.log(user);
+      this.currentUser = user;
+      document.querySelector("#edit-profile").showModal();
     },
     destroyUser: function (user) {
       axios.delete(`http://localhost:3000/users/${user.id}`).then((response) => {

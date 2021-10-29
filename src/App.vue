@@ -7,7 +7,7 @@
       | -->
       <span v-if="isLoggedIn()">
         <!-- Need to figure out how to get profile page the same as users show page -->
-        <!-- <router-link :to="`/users/${currentUser.id}`">My Profile</router-link>
+        <!-- <router-link :to="`/users/${user.id}/show`">My Profile</router-link>
         | -->
         <router-link to="/logout">Logout</router-link>
       </span>
@@ -44,11 +44,19 @@
 }
 </style>
 <script>
+import axios from "axios";
+
 export default {
   data: function () {
     return {
-      currentUser: {},
+      user: {},
     };
+  },
+  created: function () {
+    axios.get(`/users/${this.$route.params.id}`).then((response) => {
+      console.log(response.data);
+      this.user = response.data;
+    });
   },
   methods: {
     isLoggedIn: function () {
