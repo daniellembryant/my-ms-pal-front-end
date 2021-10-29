@@ -6,9 +6,9 @@
       <!-- <router-link to="/about">About</router-link>
       | -->
       <span v-if="isLoggedIn()">
-        <!-- Need to figure out how to get profile page the same as users show page -->
-        <!-- <router-link :to="`/users/${user.id}/show`">My Profile</router-link>
-        | -->
+        <!-- Need to figure out how to link profile page to user show page-->
+        <router-link :to="`/users/${user.id}`">My Profile</router-link>
+        |
         <router-link to="/logout">Logout</router-link>
       </span>
       <span v-else>

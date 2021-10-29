@@ -1,5 +1,13 @@
 <template>
   <div class="users-show">
+    <!-- Search Group by Name: -->
+    <br />
+    Search groups by name:
+    <input v-model="nameFilter" list="names" />
+    <datalist id="names">
+      <option v-for="group in groups" v-bind:key="group.id">{{ group.name }}</option>
+    </datalist>
+    <br />
     <button v-on:click="showUser(currentUser)">Edit Profile</button>
     <dialog id="edit-profile">
       <form method="dialog">
@@ -29,23 +37,22 @@
       </form>
     </dialog>
 
-    <!-- Need to get group search to work -->
-    <!-- Search Group by Name:
-    <input v-model="nameFilter" list="names" />
-    <datalist id="names">
-      <option v-for="group in groups" v-bind:key="group.id">{{ group.name }}</option>
-    </datalist>
-    <br /> -->
-    <!-- <router-link :to="`/users/${currentUser.id}/edit`" type="button" class="users-edit">Edit Profile</router-link> -->
     <br />
-    <button v-on:click="destroyProfile()">Delete Profile</button>
+
+    <button v-on:click="destroyUser()">Delete Profile</button>
+
     <h1>{{ `Welcome back ${currentUser.name}!` }}</h1>
     <!-- Quote from Quote API Goes Here (Flash Message) -->
     <img :src="currentUser.image_url" alt="profile picture" />
     <p>Location: {{ currentUser.location }}</p>
     <p>Age Group: {{ currentUser.age_group }}</p>
     <p>Diagnosis Date: {{ currentUser.diagnosis_date }}</p>
-    <!-- Show user group informaiton if user is a part of a group -->
+    <!-- Show what groups a user belongs to -->
+    <h2>Your Groups</h2>
+    <div v-for="group in currentUser.groups" v-bind:key="group.id">
+      {{ group.name }}
+      <img :src="group.image_url" alt="group image" />
+    </div>
   </div>
 </template>
 
@@ -58,7 +65,7 @@ export default {
   data: function () {
     return {
       currentUser: {},
-      userGroup: {},
+      groups: [],
       nameFilter: "",
     };
   },
@@ -67,16 +74,13 @@ export default {
       console.log(response.data);
       this.currentUser = response.data;
     });
-    // axios.get(`/user_groups/${this.$route.params.id}`).then((response) => {
-    //   console.log(response.data);
-    //   this.userGroups = response.data;
-    // });
+    this.indexGroups();
   },
   methods: {
     updateUser: function (user) {
       let editUserParams = user;
       axios
-        .patch(`/users/${this.user.id}`, editUserParams)
+        .patch(`/users/${user.id}`, editUserParams)
         .then((response) => {
           console.log(response.data);
         })
@@ -89,9 +93,19 @@ export default {
       this.currentUser = user;
       document.querySelector("#edit-profile").showModal();
     },
-    destroyUser: function (user) {
-      axios.delete(`http://localhost:3000/users/${user.id}`).then((response) => {
-        console.log("Your profile has been sucessfully deleted,", response.data);
+    destroyUser: function () {
+      if (confirm("Are you sure you want to delete your profile?")) {
+        axios.delete(`/users/${this.currentUser.id}`).then((response) => {
+          console.log(response.data);
+          this.$parent.flashMessage = "Your profile has been sucessfully deleted";
+          this.$router.push("/");
+        });
+      }
+    },
+    indexGroups: function () {
+      axios.get("http://localhost:3000/groups").then((response) => {
+        console.log(response.data);
+        this.groups = response.data;
       });
     },
   },
