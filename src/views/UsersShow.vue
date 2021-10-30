@@ -8,6 +8,7 @@
       <option v-for="group in groups" v-bind:key="group.id">{{ group.name }}</option>
     </datalist>
     <br />
+
     <button v-on:click="showUser(currentUser)">Edit Profile</button>
     <dialog id="edit-profile">
       <form method="dialog">
@@ -70,10 +71,13 @@ export default {
     };
   },
   created: function () {
-    axios.get(`/users/${this.$route.params.id}`).then((response) => {
-      console.log(response.data);
-      this.currentUser = response.data;
-    });
+    axios
+      .get(`/users/${this.$route.params.id}`)
+      .then((response) => {
+        console.log(response.data);
+        this.currentUser = response.data;
+      })
+      .catch((err) => console.log(err));
     this.indexGroups();
   },
   methods: {
@@ -104,7 +108,7 @@ export default {
     },
     indexGroups: function () {
       axios.get("http://localhost:3000/groups").then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         this.groups = response.data;
       });
     },

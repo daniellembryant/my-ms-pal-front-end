@@ -59,15 +59,20 @@ export default {
     };
   },
   created: function () {
-    axios.get(`/users/${this.$route.params.id}`).then((response) => {
-      console.log(response.data);
-      this.currentUser = response.data;
-    });
+    // check if currentUser.username === username and if that is true then pass in currentUser.id? i think the app is having an issue finding params.id because currently it doesnt exist . . . maybe we need to check if currentUser is who they are and then create a variable to store the currentUser id userId = currentUser.id, then pass that if into the params . . .
+    axios
+      .get(`/users/${this.$route.params.id}`)
+      .then((response) => {
+        console.log(response.data);
+        this.currentUser = response.data;
+      })
+      .catch((err) => console.log(err));
   },
   methods: {
     isLoggedIn: function () {
       return localStorage.getItem("jwt");
     },
+    isCurrentUser: function () {},
   },
 };
 </script>
