@@ -6,6 +6,8 @@ import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import UsersShow from "../views/UsersShow.vue";
 import GroupsIndex from "../views/GroupsIndex.vue";
+import GroupsNew from "../views/GroupsNew.vue";
+import GroupsShow from "../views/GroupsShow.vue";
 
 Vue.use(VueRouter);
 
@@ -47,6 +49,16 @@ const routes = [
     path: "/groups",
     name: "groups",
     component: GroupsIndex,
+  },
+  {
+    path: "/groups/new",
+    name: "groups-new",
+    component: GroupsNew,
+  },
+  {
+    path: "/groups/:id",
+    name: "groups-show",
+    component: GroupsShow,
   },
 ];
 

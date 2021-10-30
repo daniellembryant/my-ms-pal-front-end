@@ -6,14 +6,18 @@
       <!-- <router-link to="/about">About</router-link>
       | -->
       <span v-if="isLoggedIn()">
-        <!-- Need to figure out how to link profile page to user show page-->
+        <!-- Need to figure out how to link profile page to user show page on page load-->
         <router-link :to="`/users/${currentUser.id}`">My Profile</router-link>
         |
         <router-link to="/groups">Groups</router-link>
         |
+        <router-link to="/groups/new">Create a Group</router-link>
+        |
         <router-link to="/logout">Logout</router-link>
       </span>
       <span v-else>
+        <router-link to="/groups">Groups</router-link>
+        |
         <router-link to="/signup">Signup</router-link>
         |
         <router-link to="/login">Login</router-link>
