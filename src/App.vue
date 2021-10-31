@@ -11,7 +11,7 @@
         |
         <router-link to="/groups">Groups</router-link>
         |
-        <router-link to="/groups/new">Create a Group</router-link>
+        <router-link to="/groups/new">New Group</router-link>
         |
         <router-link to="/logout">Logout</router-link>
       </span>

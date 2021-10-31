@@ -13,6 +13,8 @@
     <br />
     <h2>Read About the Latest News About MS</h2>
     <h2>Need Some Motivation? Get Daily Motivational Quotes to Uplift Your Spirits</h2>
+    <!-- <h2>{{ `Quote of the Day: "${quotes.content}"  ${quotes.author}` }}</h2> -->
+
     <h2>Join One or More of Our Groups and Make New Friends Within the Community</h2>
   </div>
 </template>
@@ -20,6 +22,8 @@
 <style></style>
 
 <script>
+// import axios from "axios";
+
 export default {
   data: function () {
     return {
@@ -27,6 +31,13 @@ export default {
     };
   },
   created: function () {},
-  methods: {},
+  methods: {
+    // indexQuotes: function () {
+    //   axios.get("/quotes").then((response) => {
+    //     console.log(response.data.content);
+    //     this.quotes = response.data;
+    //   });
+    // },
+  },
 };
 </script>

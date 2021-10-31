@@ -43,7 +43,9 @@
     <button v-on:click="destroyUser()">Delete Profile</button>
 
     <h1>{{ `Welcome back ${currentUser.name}!` }}</h1>
-    <!-- Quote from Quote API Goes Here (Flash Message) -->
+    <h2>Latest Articles Concerning MS</h2>
+    <!-- <h2>{{ `${articles.author} ${articles.title} ${articles.url}` }}</h2> -->
+    <h2>{{ `Inspirational Quotes: "${quotes.content}"  ${quotes.author}` }}</h2>
     <img :src="currentUser.image_url" alt="profile picture" />
     <p>Location: {{ currentUser.location }}</p>
     <p>Age Group: {{ currentUser.age_group }}</p>
@@ -79,6 +81,10 @@ export default {
       })
       .catch((err) => console.log(err));
     this.indexGroups();
+    // news article api
+    // this.indexArticles();
+    // quotes api
+    this.indexQuotes();
   },
   methods: {
     updateUser: function (user) {
@@ -110,6 +116,19 @@ export default {
       axios.get("http://localhost:3000/groups").then((response) => {
         // console.log(response.data);
         this.groups = response.data;
+      });
+    },
+    // indexArticles: function () {
+    //   axios.get("/articles").then((response) => {
+    //     console.log(response.data);
+    //     // this.$parent.flashMessage = `articles?search=multiple+sclerosis`;
+    //     this.articles = response.data;
+    //   });
+    // },
+    indexQuotes: function () {
+      axios.get("/quotes").then((response) => {
+        console.log(response.data.content);
+        this.quotes = response.data;
       });
     },
   },

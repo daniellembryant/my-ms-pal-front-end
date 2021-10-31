@@ -8,6 +8,7 @@ import UsersShow from "../views/UsersShow.vue";
 import GroupsIndex from "../views/GroupsIndex.vue";
 import GroupsNew from "../views/GroupsNew.vue";
 import GroupsShow from "../views/GroupsShow.vue";
+import GroupsEdit from "../views/GroupsEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -59,6 +60,11 @@ const routes = [
     path: "/groups/:id",
     name: "groups-show",
     component: GroupsShow,
+  },
+  {
+    path: "/groups/:id/edit",
+    name: "groups-edit",
+    component: GroupsEdit,
   },
 ];
 
