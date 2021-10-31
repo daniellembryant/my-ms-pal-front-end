@@ -15,6 +15,7 @@
       </div>
       <div>
         <label>Age Group:</label>
+        <!-- Need to insert drop down with age group options -->
         <input type="age_group" v-model="newUserParams.age_group" />
       </div>
       <div>
