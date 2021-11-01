@@ -7,7 +7,8 @@
       | -->
       <span v-if="isLoggedIn()">
         <!-- Need to figure out how to link profile page to user show page on page load-->
-        <router-link :to="`/users/${currentUser.id}`">My Profile</router-link>
+
+        <router-link :to="`/users/${userID()}`">My Profile</router-link>
         |
         <router-link to="/groups">Groups</router-link>
         |
@@ -50,7 +51,7 @@
 }
 </style>
 <script>
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   data: function () {
@@ -58,21 +59,15 @@ export default {
       currentUser: {},
     };
   },
-  created: function () {
-    // check if currentUser.username === username and if that is true then pass in currentUser.id? i think the app is having an issue finding params.id because currently it doesnt exist . . . maybe we need to check if currentUser is who they are and then create a variable to store the currentUser id userId = currentUser.id, then pass that if into the params . . .
-    axios
-      .get(`/users/${this.$route.params.id}`)
-      .then((response) => {
-        console.log(response.data);
-        this.currentUser = response.data;
-      })
-      .catch((err) => console.log(err));
-  },
+  created: function () {},
+
   methods: {
     isLoggedIn: function () {
       return localStorage.getItem("jwt");
     },
-    isCurrentUser: function () {},
+    userID: function () {
+      return localStorage.getItem("user_id");
+    },
   },
 };
 </script>

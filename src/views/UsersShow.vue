@@ -70,6 +70,7 @@ export default {
       currentUser: {},
       groups: [],
       nameFilter: "",
+      quotes: [],
     };
   },
   created: function () {
