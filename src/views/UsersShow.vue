@@ -43,8 +43,18 @@
     <button v-on:click="destroyUser()">Delete Profile</button>
 
     <h1>{{ `Welcome back ${currentUser.name}!` }}</h1>
+    <!-- Articles -->
     <h2>Latest Articles Concerning MS</h2>
-    <!-- <h2>{{ `${articles.author} ${articles.title} ${articles.url}` }}</h2> -->
+    <ul>
+      <li v-for="article in articles.slice(0, 5)" v-bind:key="article.id">
+        <a :href="article.url" v-bind:key="article.url" target="_blank" rel="noopener noreferrer">
+          {{ article.title }}
+          {{ article.author }}
+        </a>
+      </li>
+    </ul>
+
+    <!-- Inspirational Quotes API -->
     <h2>{{ `Inspirational Quotes: "${quotes.content}"  ${quotes.author}` }}</h2>
     <img :src="currentUser.image_url" alt="profile picture" />
     <p>Location: {{ currentUser.location }}</p>
@@ -71,6 +81,7 @@ export default {
       groups: [],
       nameFilter: "",
       quotes: [],
+      articles: [],
     };
   },
   created: function () {
@@ -83,7 +94,7 @@ export default {
       .catch((err) => console.log(err));
     this.indexGroups();
     // news article api
-    // this.indexArticles();
+    this.indexArticles();
     // quotes api
     this.indexQuotes();
   },
@@ -119,13 +130,13 @@ export default {
         this.groups = response.data;
       });
     },
-    // indexArticles: function () {
-    //   axios.get("/articles").then((response) => {
-    //     console.log(response.data);
-    //     // this.$parent.flashMessage = `articles?search=multiple+sclerosis`;
-    //     this.articles = response.data;
-    //   });
-    // },
+    indexArticles: function () {
+      axios.get("/articles").then((response) => {
+        console.log("articles data", response.data);
+        // this.$parent.flashMessage = `articles?search=multiple+sclerosis`;
+        this.articles = response.data;
+      });
+    },
     indexQuotes: function () {
       axios.get("/quotes").then((response) => {
         console.log(response.data.content);

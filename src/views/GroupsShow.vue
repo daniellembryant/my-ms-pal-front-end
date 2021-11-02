@@ -11,11 +11,11 @@
     <button v-on:click="destroyGroup">Delete Group</button>
     <!-- Group Members -->
     <h2>Members</h2>
-    <div v-for="userGroup in userGroups" v-bind:key="userGroup.id">
-      {{ userGroup.user_id }} {{ userGroup.group_id }}
+    <div v-for="user in group.users" v-bind:key="user.id">
+      {{ user.name }}
     </div>
-    <button v-on:click="createUserGroup">Join Group</button>
-    <button v-on:click="destroyUserGroup">Leave Group</button>
+    <button v-if="group.member" v-on:click="destroyUserGroup">Leave Group</button>
+    <button v-else v-on:click="createUserGroup">Join Group</button>
     <h2>Group Messages</h2>
     <div v-for="message in group.messages" v-bind:key="message.id">
       {{ message.body }}
@@ -50,26 +50,14 @@ export default {
   data: function () {
     return {
       group: {},
-      message: {},
-      // currentUser: {},
       newMessageParams: {},
       errors: [],
-      userGroups: {},
-      userGroup: {},
-      user_id: {},
-      user: {},
     };
   },
   created: function () {
     axios.get(`/groups/${this.$route.params.id}`).then((response) => {
-      // console.log(response.data);
+      console.log("group data", response.data);
       this.group = response.data;
-      console.log(response.data.messages.id); // currently undefined
-    });
-    axios.get("/user_groups").then((response) => {
-      this.userGroups = response.data;
-      console.log(this.userGroups);
-      // localStorage.setItem("group_id", response.data.group_id);
     });
   },
   methods: {
@@ -105,7 +93,7 @@ export default {
       } else {
         console.log("User said no");
       }
-      // currently you have to refresh the page not to see message. Need to fix.
+      // currently you have to refresh the page to see that message was deleted. Need to fix.
       axios.delete(`/messages/${message}`).then((response) => {
         console.log(response.data);
         let index = this.messages.indexOf(message);
@@ -123,24 +111,25 @@ export default {
         .post("/user_groups", params)
         .then((response) => {
           console.log(response.data);
-          this.$router.push("/groups");
+          this.group.users.push(response.data);
+          this.group.member = true;
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
         });
     },
     destroyUserGroup: function () {
-      let user_id = localStorage.getItem("user_id");
       if (confirm("Are you sure you want to leave this group?")) {
         console.log("User said yes");
+        axios.delete(`user_groups/${this.group.id}`).then((response) => {
+          console.log(response.data);
+          let index = this.group.users.indexOf(this.$parent.userID);
+          this.group.users.splice(index, 1);
+          this.group.member = false;
+        });
       } else {
         console.log("User said no");
       }
-      axios.delete(`user_groups/${user_id}`).then((response) => {
-        console.log(response.data);
-        let index = this.userGroups.indexOf(user_id);
-        this.userGroups.splice(index, 1);
-      });
     },
   },
 };
