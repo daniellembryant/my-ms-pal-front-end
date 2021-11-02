@@ -2,7 +2,7 @@
   <div class="users-show">
     <!-- Search Group by Name: -->
     <br />
-    Search groups by name:
+    Current Groups:
     <input v-model="nameFilter" list="names" />
     <datalist id="names">
       <option v-for="group in groups" v-bind:key="group.id">{{ group.name }}</option>
@@ -46,16 +46,17 @@
     <!-- Articles -->
     <h2>Latest Articles Concerning MS</h2>
     <ul>
-      <li v-for="article in articles.slice(0, 5)" v-bind:key="article.id">
+      <div v-for="article in articles.slice(1, 5)" v-bind:key="article.id">
         <a :href="article.url" v-bind:key="article.url" target="_blank" rel="noopener noreferrer">
           {{ article.title }}
           {{ article.author }}
         </a>
-      </li>
+      </div>
     </ul>
 
     <!-- Inspirational Quotes API -->
-    <h2>{{ `Inspirational Quotes: "${quotes.content}"  ${quotes.author}` }}</h2>
+    <h2>{{ `Inspirational Quote: "${quotes.content}"  ${quotes.author}` }}</h2>
+
     <img :src="currentUser.image_url" alt="profile picture" />
     <p>Location: {{ currentUser.location }}</p>
     <p>Age Group: {{ currentUser.age_group }}</p>
