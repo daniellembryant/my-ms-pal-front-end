@@ -12,7 +12,7 @@
     <!-- Group Members -->
     <h2>Members</h2>
     <div v-for="userGroup in userGroups" v-bind:key="userGroup.id">
-      {{ userGroup.group }}
+      {{ userGroup.user_id }} {{ userGroup.group_id }}
     </div>
     <button v-on:click="createUserGroup">Join Group</button>
     <button v-on:click="destroyUserGroup">Leave Group</button>
