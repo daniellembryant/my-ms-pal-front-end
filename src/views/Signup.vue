@@ -16,12 +16,11 @@
       <div>
         <label>Age Group:</label>
         <!-- Need to insert drop down with age group options -->
-
         <select v-model="newUserParams.age_group">
-          <option>Please select one</option>
-          <option>18-35</option>
-          <option>36-50</option>
-          <option>51+</option>
+          <option disabled value="">Please select one</option>
+          <option value="18-35">18-35</option>
+          <option value="36-50">36-50</option>
+          <option value="51+">51+</option>
         </select>
         <span>Selected: {{ selected }}</span>
 

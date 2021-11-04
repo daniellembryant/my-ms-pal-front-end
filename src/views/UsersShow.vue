@@ -23,11 +23,11 @@
         </p>
         <p>
           Age Group:
-          <select v-model="selected">
+          <select v-model="newUserParams.age_group">
             <option disabled value="">Please select one</option>
-            <option>18-35</option>
-            <option>36-50</option>
-            <option>51+</option>
+            <option value="18-35">18-35</option>
+            <option value="36-50">36-50</option>
+            <option value="51+">51+</option>
           </select>
           <span>Selected: {{ selected }}</span>
         </p>
@@ -89,6 +89,7 @@ export default {
       nameFilter: "",
       quotes: [],
       articles: [],
+      selected: "",
     };
   },
   created: function () {
