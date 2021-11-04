@@ -23,7 +23,7 @@
         </p>
         <p>
           Age Group:
-          <select v-model="newUserParams.age_group">
+          <select v-model="currentUser.age_group">
             <option disabled value="">Please select one</option>
             <option value="18-35">18-35</option>
             <option value="36-50">36-50</option>
