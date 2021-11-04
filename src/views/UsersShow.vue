@@ -23,7 +23,13 @@
         </p>
         <p>
           Age Group:
-          <input type="text" v-model="currentUser.age_group" />
+          <select v-model="selected">
+            <option disabled value="">Please select one</option>
+            <option>18-35</option>
+            <option>36-50</option>
+            <option>51+</option>
+          </select>
+          <span>Selected: {{ selected }}</span>
         </p>
         <p>
           Location:

@@ -5,10 +5,12 @@
     <p>{{ group.summary }}</p>
     <p>{{ group.location }}</p>
     <img :src="group.image_url" alt="" />
-    <!-- <div v-if="currentUser.admin"> -->
-    <router-link :to="`/groups/${groupID()}/edit`">Edit</router-link>
-    <br />
-    <button v-on:click="destroyGroup">Delete Group</button>
+    <!-- Should only appear if someone is an admin -->
+    <div>
+      <router-link :to="`/groups/${groupID()}/edit`" v-if="user.admin">Edit</router-link>
+      <br />
+      <button v-if="user.admin" v-on:click="destroyGroup">Delete Group</button>
+    </div>
     <!-- Group Members -->
     <h2>Members</h2>
     <div v-for="user in group.users" v-bind:key="user.id">
@@ -22,9 +24,12 @@
       <br />
       {{ message.user.name }}
       <br />
-      {{ message.created_at }}
+      {{ `created ${relativeDate(message.created_at)}` }}
       <br />
-      <button v-on:click="destroyMessage(message.id)">Delete Message</button>
+      <!-- Delete messages -->
+      <button v-if="user.id == message.user_id || user.admin" v-on:click="destroyMessage(message.id)">
+        Delete Message
+      </button>
     </div>
     <!-- Message create form -->
     <form v-on:submit.prevent="createMessage">
@@ -45,6 +50,9 @@
 
 <script>
 import axios from "axios";
+import dayjs from "dayjs";
+var relativeTime = require("dayjs/plugin/relativeTime");
+dayjs.extend(relativeTime);
 
 export default {
   data: function () {
@@ -52,6 +60,8 @@ export default {
       group: {},
       newMessageParams: {},
       errors: [],
+      user: {},
+      currentUser: {},
     };
   },
   created: function () {
@@ -59,8 +69,15 @@ export default {
       console.log("group data", response.data);
       this.group = response.data;
     });
+    axios.get(`/users/${localStorage.getItem("user_id")}`).then((response) => {
+      console.log("user data", response.data);
+      this.user = response.data;
+    });
   },
   methods: {
+    relativeDate: function (created_at) {
+      return dayjs(created_at).fromNow();
+    },
     destroyGroup: function () {
       if (confirm("Are you sure you want to delete this group?")) {
         console.log("User said yes");
@@ -72,6 +89,7 @@ export default {
         this.$router.push("/groups");
       });
     },
+
     createMessage: function () {
       let params = {
         body: this.newMessageParams.body,
@@ -81,7 +99,7 @@ export default {
         .post("/messages", params)
         .then((response) => {
           console.log(response.data);
-          this.$router.push("/groups");
+          this.group.messages.push(response.data);
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
@@ -93,15 +111,14 @@ export default {
       } else {
         console.log("User said no");
       }
-      // currently you have to refresh the page to see that message was deleted. Need to fix.
       axios.delete(`/messages/${message}`).then((response) => {
         console.log(response.data);
         let index = this.messages.indexOf(message);
-        this.groups.splice(index, 1);
+        this.group.splice(index, 1);
       });
     },
     groupID: function () {
-      return localStorage.getItem("group_id");
+      return localStorage.getItem("user_id");
     },
     createUserGroup: function () {
       let params = {

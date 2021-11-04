@@ -16,14 +16,17 @@
       <div>
         <label>Age Group:</label>
         <!-- Need to insert drop down with age group options -->
-        <select v-model="selected">
-          <option disabled value="">Please select one</option>
+
+        <select v-model="newUserParams.age_group">
+          <option>Please select one</option>
           <option>18-35</option>
           <option>36-50</option>
           <option>51+</option>
         </select>
         <span>Selected: {{ selected }}</span>
-        <!-- <input type="age_group" v-model="newUserParams.age_group" /> -->
+
+        <!-- <input type="age_group" 
+        v-model="newUserParams.age_group" /> -->
       </div>
       <div>
         <label>Password:</label>
@@ -42,7 +45,7 @@
         <input type="diagnosis_date" v-model="newUserParams.diagnosis_date" />
       </div>
       <div>
-        <label>Profile Picture:</label>
+        <label>Image URL:</label>
         <input type="image_url" v-model="newUserParams.image_url" />
       </div>
       <input type="submit" value="Submit" />
