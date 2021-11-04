@@ -69,19 +69,27 @@
     <p>Diagnosis Date: {{ currentUser.diagnosis_date }}</p>
     <!-- Show what groups a user belongs to -->
     <h2>Your Groups</h2>
-    <div v-for="group in currentUser.groups" v-bind:key="group.id">
+    <div v-for="group in orderBy(currentUser.groups, 'name')" v-bind:key="group.id">
       {{ group.name }}
+      <br />
       <img :src="group.image_url" alt="group image" />
     </div>
   </div>
 </template>
 
-<style></style>
+<style>
+img {
+  width: 60%;
+  height: auto;
+}
+</style>
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
 
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function () {
     return {
       currentUser: {},

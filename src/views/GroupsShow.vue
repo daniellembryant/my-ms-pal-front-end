@@ -48,6 +48,13 @@
   <!-- </div> -->
 </template>
 
+<style>
+img {
+  width: 70%;
+  height: auto;
+}
+</style>
+
 <script>
 import axios from "axios";
 import dayjs from "dayjs";

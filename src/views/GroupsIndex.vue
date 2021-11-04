@@ -10,6 +10,13 @@
   </div>
 </template>
 
+<style>
+img {
+  width: 70%;
+  height: auto;
+}
+</style>
+
 <script>
 import axios from "axios";
 import Vue2Filters from "vue2-filters";
