@@ -136,7 +136,7 @@ export default {
         axios.delete(`/users/${this.currentUser.id}`).then((response) => {
           console.log(response.data);
           this.$parent.flashMessage = "Your profile has been sucessfully deleted";
-          this.$router.push("/");
+          this.$router.push("/logout");
         });
       }
     },

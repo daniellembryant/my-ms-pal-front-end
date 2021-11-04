@@ -7,7 +7,7 @@
     <img :src="group.image_url" alt="" />
     <!-- Should only appear if someone is an admin -->
     <div>
-      <router-link :to="`/groups/${groupID()}/edit`" v-if="user.admin">Edit</router-link>
+      <router-link :to="`/groups/${group.id}/edit`" v-if="user.admin">Edit</router-link>
       <br />
       <button v-if="user.admin" v-on:click="destroyGroup">Delete Group</button>
     </div>
@@ -27,7 +27,7 @@
       {{ `created ${relativeDate(message.created_at)}` }}
       <br />
       <!-- Delete messages -->
-      <button v-if="user.id == message.user_id || user.admin" v-on:click="destroyMessage(message.id)">
+      <button v-if="user.id == message.user_id || user.admin" v-on:click="destroyMessage(message)">
         Delete Message
       </button>
     </div>
@@ -118,14 +118,11 @@ export default {
       } else {
         console.log("User said no");
       }
-      axios.delete(`/messages/${message}`).then((response) => {
+      axios.delete(`/messages/${message.id}`).then((response) => {
         console.log(response.data);
-        let index = this.messages.indexOf(message);
-        this.group.splice(index, 1);
+        let index = this.group.messages.indexOf(message);
+        this.group.messages.splice(index, 1);
       });
-    },
-    groupID: function () {
-      return localStorage.getItem("user_id");
     },
     createUserGroup: function () {
       let params = {

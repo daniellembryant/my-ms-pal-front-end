@@ -6,8 +6,6 @@
       <!-- <router-link to="/about">About</router-link>
       | -->
       <span v-if="isLoggedIn()">
-        <!-- Need to figure out how to link profile page to user show page on page load-->
-
         <router-link :to="`/users/${userID()}`">My Profile</router-link>
         |
         <router-link to="/groups">Groups</router-link>

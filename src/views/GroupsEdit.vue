@@ -45,7 +45,7 @@ export default {
   methods: {
     updateGroup: function () {
       axios
-        .patch(`/groups/${this.editGroupParams.id}`, this.editGroupParams)
+        .patch(`/groups/`, this.editGroupParams)
         .then((response) => {
           console.log(response.data);
           this.$router.push(`/groups/${response.data.id}`);
