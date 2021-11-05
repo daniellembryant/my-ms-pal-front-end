@@ -13,22 +13,6 @@
     <img :src="group.image_url" alt="" />
     <!-- Should only appear if someone is an admin -->
     <div>
-      <!-- Group Notification- Need to figure out how to send notifications to group members -->
-      <div v-for="notification in group.notifications" v-bind:key="notification.id">
-        {{ notification.body }}
-      </div>
-      <!-- <form v-on:submit.prevent="createNotification">
-        <ul>
-          <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-        </ul>
-        <div>
-          <h2>Create Notification:</h2>
-          <input type="text" v-model="newNotificationParams.body" />
-        </div>
-        <div>
-          <input type="submit" value="Send Notification" />
-        </div>
-      </form> -->
       <br />
       <router-link :to="`/groups/${group.id}/edit`" v-if="user.admin">Edit Group Information</router-link>
       <br />
@@ -68,7 +52,6 @@
       </div>
     </form>
   </div>
-  <!-- </div> -->
 </template>
 
 <style>
