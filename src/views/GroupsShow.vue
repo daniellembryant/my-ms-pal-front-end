@@ -17,7 +17,7 @@
       <div v-for="notification in group.notifications" v-bind:key="notification.id">
         {{ notification.body }}
       </div>
-      <form v-on:submit.prevent="createNotification">
+      <!-- <form v-on:submit.prevent="createNotification">
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
@@ -28,7 +28,7 @@
         <div>
           <input type="submit" value="Send Notification" />
         </div>
-      </form>
+      </form> -->
       <br />
       <router-link :to="`/groups/${group.id}/edit`" v-if="user.admin">Edit Group Information</router-link>
       <br />

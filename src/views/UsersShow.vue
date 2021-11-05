@@ -101,7 +101,7 @@ export default {
         console.log(response.data);
         this.currentUser = response.data;
       })
-      .catch((err) => console.log(err));
+      .catch((error) => console.log(error));
     this.indexGroups();
     // news article api
     this.indexArticles();
@@ -143,7 +143,6 @@ export default {
     indexArticles: function () {
       axios.get("/articles").then((response) => {
         console.log("articles data", response.data);
-        // this.$parent.flashMessage = `articles?search=multiple+sclerosis`;
         this.articles = response.data;
       });
     },

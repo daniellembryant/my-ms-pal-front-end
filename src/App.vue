@@ -15,8 +15,6 @@
         <router-link to="/logout">Logout</router-link>
       </span>
       <span v-else>
-        <router-link to="/groups">Groups</router-link>
-        |
         <router-link to="/signup">Signup</router-link>
         |
         <router-link to="/login">Login</router-link>
