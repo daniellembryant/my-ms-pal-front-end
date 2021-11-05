@@ -4,10 +4,33 @@
     <p>{{ group.name }}</p>
     <p>{{ group.summary }}</p>
     <p>{{ group.location }}</p>
+    <p>{{ group.meeting_notes }}</p>
+    <a :href="group.meeting_url" v-bind:key="group.meeting_url" target="_blank" rel="noopener noreferrer">
+      Click to Join Meeting
+    </a>
+    <br />
+
     <img :src="group.image_url" alt="" />
     <!-- Should only appear if someone is an admin -->
     <div>
-      <router-link :to="`/groups/${group.id}/edit`" v-if="user.admin">Edit</router-link>
+      <!-- Group Notification- Need to figure out how to send notifications to group members -->
+      <div v-for="notification in group.notifications" v-bind:key="notification.id">
+        {{ notification.body }}
+      </div>
+      <form v-on:submit.prevent="createNotification">
+        <ul>
+          <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+        </ul>
+        <div>
+          <h2>Create Notification:</h2>
+          <input type="text" v-model="newNotificationParams.body" />
+        </div>
+        <div>
+          <input type="submit" value="Send Notification" />
+        </div>
+      </form>
+      <br />
+      <router-link :to="`/groups/${group.id}/edit`" v-if="user.admin">Edit Group Information</router-link>
       <br />
       <button v-if="user.admin" v-on:click="destroyGroup">Delete Group</button>
     </div>
@@ -69,6 +92,9 @@ export default {
       errors: [],
       user: {},
       currentUser: {},
+      groups: [],
+      newNotificationParams: {},
+      notifications: [],
     };
   },
   created: function () {
@@ -151,6 +177,33 @@ export default {
       } else {
         console.log("User said no");
       }
+    },
+    createNotification: function () {
+      let params = {
+        body: this.newNotificationParams.body,
+        group_id: this.group.id,
+      };
+      axios
+        .post("/notifications", params)
+        .then((response) => {
+          console.log(response.data);
+          this.group.notifications.push(response.data);
+        })
+        .catch((error) => {
+          this.errors = error.response.data.errors;
+        });
+    },
+    destroyNotification: function (notification) {
+      if (confirm("Are you sure you want to delete this notification?")) {
+        console.log("User said yes");
+      } else {
+        console.log("User said no");
+      }
+      axios.delete(`/messages/${notification.id}`).then((response) => {
+        console.log(response.data);
+        let index = this.group.notifications.indexOf(notification);
+        this.group.notification.splice(index, 1);
+      });
     },
   },
 };

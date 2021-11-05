@@ -1,7 +1,20 @@
 <template>
   <div class="groups-index">
+    <br />
+    <!-- Search Group by Name: -->
+    <div>
+      Group Search By Location:
+      <input type="text" v-model="locationFilter" />
+    </div>
+    <!-- <div v-for="group in filterBy(groups, locationFilter, location)" v-bind:key="group.id">
+      {{ group.name }}
+    </div> -->
+    <br />
     <h1>Groups</h1>
-    <div v-for="group in orderBy(groups, 'name')" v-bind:key="group.id">
+    <div
+      v-for="group in orderBy(filterBy(groups, locationFilter, 'location'), sortAttribute, sortOrder)"
+      v-bind:key="group.id"
+    >
       <h4>{{ group.name }}</h4>
       <img :src="group.image_url" alt="" />
       <p>{{ group.location }}</p>
@@ -26,6 +39,9 @@ export default {
   data: function () {
     return {
       groups: [],
+      locationFilter: "",
+      sortAttribute: "name",
+      sortOrder: 1,
     };
   },
   created: function () {

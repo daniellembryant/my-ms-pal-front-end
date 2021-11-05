@@ -40,7 +40,7 @@
         <input type="location" v-model="newUserParams.location" />
       </div>
       <div>
-        <label>Diagnosis Date:</label>
+        <label>Diagnosis Date (yyyy-mm-dd):</label>
         <input type="diagnosis_date" v-model="newUserParams.diagnosis_date" />
       </div>
       <div>

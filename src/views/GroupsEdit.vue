@@ -18,6 +18,15 @@
         <input type="text" v-model="editGroupParams.location" />
       </div>
       <div>
+        <label>Meeting Notes:</label>
+        <input type="text" v-model="editGroupParams.meeting_notes" />
+      </div>
+      <div>
+        <label>Meeting URL:</label>
+        <input type="text" v-model="editGroupParams.meeting_url" />
+      </div>
+
+      <div>
         <label>Group Image URL:</label>
         <input type="image_url" v-model="editGroupParams.image_url" />
       </div>
@@ -34,6 +43,7 @@ export default {
     return {
       editGroupParams: {},
       errors: [],
+      group: {},
     };
   },
   created: function () {
@@ -45,7 +55,7 @@ export default {
   methods: {
     updateGroup: function () {
       axios
-        .patch(`/groups/`, this.editGroupParams)
+        .patch(`/groups/${this.editGroupParams.id}`, this.editGroupParams)
         .then((response) => {
           console.log(response.data);
           this.$router.push(`/groups/${response.data.id}`);

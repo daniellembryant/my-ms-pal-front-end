@@ -1,14 +1,5 @@
 <template>
   <div class="users-show">
-    <!-- Search Group by Name: -->
-    <br />
-    Current Groups:
-    <input v-model="nameFilter" list="names" />
-    <datalist id="names">
-      <option v-for="group in groups" v-bind:key="group.id">{{ group.name }}</option>
-    </datalist>
-    <br />
-
     <button v-on:click="showUser(currentUser)">Edit Profile</button>
     <dialog id="edit-profile">
       <form method="dialog">
@@ -34,6 +25,10 @@
         <p>
           Location:
           <input type="text" v-model="currentUser.location" />
+        </p>
+        <p>
+          Diagnosis Date (yyyy-mm-dd):
+          <input type="text" v-model="currentUser.diagnosis_date" />
         </p>
         <p>
           Profile Picture:
@@ -66,7 +61,7 @@
     <img :src="currentUser.image_url" alt="profile picture" />
     <p>Location: {{ currentUser.location }}</p>
     <p>Age Group: {{ currentUser.age_group }}</p>
-    <p>Diagnosis Date: {{ currentUser.diagnosis_date }}</p>
+    <p>Diagnosis Date (yyyy-mm-dd): {{ currentUser.diagnosis_date }}</p>
     <!-- Show what groups a user belongs to -->
     <h2>Your Groups</h2>
     <div v-for="group in orderBy(currentUser.groups, 'name')" v-bind:key="group.id">
@@ -94,7 +89,6 @@ export default {
     return {
       currentUser: {},
       groups: [],
-      nameFilter: "",
       quotes: [],
       articles: [],
       selected: "",

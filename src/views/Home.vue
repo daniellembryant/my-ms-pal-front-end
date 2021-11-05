@@ -35,6 +35,7 @@ export default {
       message: "My MS Pal",
       quotes: [],
       groups: [],
+      notification: {},
     };
   },
   created: function () {
