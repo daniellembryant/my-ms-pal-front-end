@@ -1,6 +1,5 @@
 <template>
   <div class="groups-index">
-    <!--page title end-->
     <div class="container mb30">
       <div class="row">
         <div class="col-md-3 mb40">

@@ -18,6 +18,14 @@
         <input type="text" v-model="newGroupParams.location" />
       </div>
       <div>
+        <label>Meeting Notes:</label>
+        <input type="text" v-model="newGroupParams.meeting_notes" />
+      </div>
+      <div>
+        <label>Meeting URL:</label>
+        <input type="text" v-model="newGroupParams.meeting_url" />
+      </div>
+      <div>
         <label>Group Image URL:</label>
         <input type="image_url" v-model="newGroupParams.image_url" />
       </div>
