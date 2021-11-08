@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <!-- My code -->
     <h1>{{ message }}</h1>
     <h2>Join Our Community Specifically Dedicated to Those with Multiple Sclerosis</h2>
     <h2>
