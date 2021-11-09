@@ -173,7 +173,7 @@
         <!--/col-->
         <div class="col-lg-3 col-md-6 mb30 no-padding">
           <div class="team-card">
-            <img src="/classic-template/html/images/motivational.jpg" alt="" class="img-fluid" />
+            <img src="/classic-template/html/images/optimism.jpg" alt="" class="img-fluid" />
             <div class="team-overlay align-items-center">
               <div class="team-detail">
                 <h4>Stay Motivated</h4>
@@ -186,10 +186,10 @@
         <!--/col-->
         <div class="col-lg-3 col-md-6 mb30 no-padding">
           <div class="team-card">
-            <img src="/classic-template/html/images/newspapers.jpg" alt="" class="img-fluid" />
+            <img src="/classic-template/html/images/couple-dancing.jpg" alt="" class="img-fluid" />
             <div class="team-overlay align-items-center">
               <div class="team-detail">
-                <h4>Stay Informed</h4>
+                <h4>Stay Connected</h4>
 
                 <div class="seprator-overlay"></div>
               </div>
