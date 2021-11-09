@@ -44,7 +44,7 @@
           <!-- post article-->
         </div>
         <div class="col-md-3 mb40">
-          <button v-on:click="showUser(currentUser)" class="btn btn-outline-secondary">Edit Profile</button>
+          <!-- <button v-on:click="showUser(currentUser)" class="btn btn-outline-secondary">Edit Profile</button>
           <dialog id="edit-profile">
             <form method="dialog">
               <h1>Edit Profile</h1>
@@ -82,10 +82,90 @@
               <button>Close</button>
             </form>
             <br />
-          </dialog>
+          </dialog> -->
           <!--/col-->
 
-          <div class="mb40">
+          <div class="col-md-3 mb40">
+            <!-- link that opens popup -->
+            <a class="popup-content btn btn-outline-secondary" href="#popup-register">Edit Profile</a>
+            <!-- form itself -->
+            <div id="popup-register" class="mfp-hide popup-content-area white-popup">
+              <h4>Edit Profile</h4>
+              <hr />
+              <form v-on:click="showUser(currentUser)">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" v-model="currentUser.name" class="form-control" id="name" placeholder="Name" />
+                </div>
+                <div class="form-group">
+                  <label for="email1">Email</label>
+                  <input
+                    type="password"
+                    v-model="currentUser.email"
+                    class="form-control"
+                    id="email1"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label type="age-group" class="form-control" id="age-group" placeholder="Age Group">Age Group</label>
+                  <select v-model="currentUser.age_group">
+                    <option disabled value="">Please select one</option>
+                    <option value="18-35">18-35</option>
+                    <option value="36-50">36-50</option>
+                    <option value="51+">51+</option>
+                  </select>
+                  <span>Selected: {{ selected }}</span>
+                </div>
+                <div class="form-group">
+                  <label for="location">Location</label>
+                  <input
+                    type="location"
+                    v-model="currentUser.location"
+                    class="form-control"
+                    id="location"
+                    placeholder="Location"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="diagnosis-date">Diagnosis Date(yyyy-mm-dd):</label>
+                  <input
+                    type="diagnosis-date"
+                    v-model="currentUser.diagnosis_date"
+                    class="form-control"
+                    id="diagnosis-date"
+                    placeholder="Diagnosis Date"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="profile-picture">Profile Picture URL</label>
+                  <input
+                    type="profile-picture"
+                    v-model="currentUser.image_url"
+                    class="form-control"
+                    id="profile-picture"
+                    placeholder="Profile Picture"
+                  />
+                </div>
+                <div class="clearfix">
+                  <label class="custom-control float-left custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+                    <input type="checkbox" class="custom-control-input" />
+                    <span class="custom-control-indicator"></span>
+                  </label>
+                  <button
+                    v-on:click="updateUser(currentUser)"
+                    type="submit"
+                    class="btn btn-primary float-right"
+                    title="Close (Esc)"
+                  >
+                    Update
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-md-3 mb40">
             <br />
             <button v-on:click="destroyUser()" class="btn btn-outline-secondary">Delete Profile</button>
             <br />
@@ -238,7 +318,7 @@ export default {
     showUser: function (user) {
       console.log(user);
       this.currentUser = user;
-      document.querySelector("#edit-profile").showModal();
+      // document.querySelector("#edit-profile").showModal();
     },
     destroyUser: function () {
       if (confirm("Are you sure you want to delete your profile?")) {

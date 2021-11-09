@@ -5,7 +5,11 @@
         <div class="col-md-3 mb40">
           <div class="mb40">
             <!-- Insert Edit Group and Group Delete -->
-            <router-link :to="`/groups/${group.id}/edit`" v-if="user.admin">Edit Group Information</router-link>
+            <button class="btn btn-outline-secondary">
+              <router-link style="color: #000000b3" :to="`/groups/${group.id}/edit`" v-if="user.admin">
+                Edit Group
+              </router-link>
+            </button>
             <br />
             <br />
             <button v-if="user.admin" v-on:click="destroyGroup" class="btn btn-outline-secondary">Delete Group</button>
@@ -80,10 +84,17 @@
               <br />
               {{ group.meeting_notes }}
               <br />
-              <a :href="group.meeting_url" v-bind:key="group.meeting_url" target="_blank" rel="noopener noreferrer">
-                Click to Join Meeting
-              </a>
-
+              <button class="btn btn-outline-secondary">
+                <a
+                  :href="group.meeting_url"
+                  v-bind:key="group.meeting_url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="color: #000000b3"
+                >
+                  Click to Join Meeting
+                </a>
+              </button>
               <!-- <a href="#" class="btn btn-outline-secondary">Read More</a> -->
             </div>
           </article>
@@ -227,6 +238,7 @@ export default {
         .catch((error) => {
           this.errors = error.response.data.errors;
         });
+      this.newMessageParams = {};
     },
     destroyMessage: function (message) {
       if (confirm("Are you sure you want to delete this message?")) {
