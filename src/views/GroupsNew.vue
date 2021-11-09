@@ -7,7 +7,7 @@
     >
       <div class="container">
         <div class="row pb30">
-          <div class="col-lg-4 col-md-6 mr-auto ml-auto col-sm-8">
+          <div class="mr-auto ml-auto col-sm-12">
             <h3 class="text-white text-center mb30">New Group</h3>
             <form v-on:submit.prevent="createGroup()">
               <ul>

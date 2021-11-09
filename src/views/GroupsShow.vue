@@ -280,33 +280,33 @@ export default {
         console.log("User said no");
       }
     },
-    createNotification: function () {
-      let params = {
-        body: this.newNotificationParams.body,
-        group_id: this.group.id,
-      };
-      axios
-        .post("/notifications", params)
-        .then((response) => {
-          console.log(response.data);
-          this.group.notifications.push(response.data);
-        })
-        .catch((error) => {
-          this.errors = error.response.data.errors;
-        });
-    },
-    destroyNotification: function (notification) {
-      if (confirm("Are you sure you want to delete this notification?")) {
-        console.log("User said yes");
-      } else {
-        console.log("User said no");
-      }
-      axios.delete(`/messages/${notification.id}`).then((response) => {
-        console.log(response.data);
-        let index = this.group.notifications.indexOf(notification);
-        this.group.notification.splice(index, 1);
-      });
-    },
+    // createNotification: function () {
+    //   let params = {
+    //     body: this.newNotificationParams.body,
+    //     group_id: this.group.id,
+    //   };
+    //   axios
+    //     .post("/notifications", params)
+    //     .then((response) => {
+    //       console.log(response.data);
+    //       this.group.notifications.push(response.data);
+    //     })
+    //     .catch((error) => {
+    //       this.errors = error.response.data.errors;
+    //     });
+    // },
+    // destroyNotification: function (notification) {
+    //   if (confirm("Are you sure you want to delete this notification?")) {
+    //     console.log("User said yes");
+    //   } else {
+    //     console.log("User said no");
+    //   }
+    //   axios.delete(`/messages/${notification.id}`).then((response) => {
+    //     console.log(response.data);
+    //     let index = this.group.notifications.indexOf(notification);
+    //     this.group.notification.splice(index, 1);
+    //   });
+    // },
   },
 };
 </script>

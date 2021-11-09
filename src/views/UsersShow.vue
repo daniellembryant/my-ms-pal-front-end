@@ -40,6 +40,284 @@
                 <img :src="group.image_url" alt="group image" />
               </div>
             </div>
+
+            <div class="container pt100 pb100">
+              <div class="">
+                <div class="">
+                  <div class="clearfix">
+                    <div id="js-filters-lightbox-gallery" class="cbp-l-filters-button cbp-l-filters-left">
+                      <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">All</div>
+                      <div data-filter=".graphic" class="cbp-filter-item">Graphic</div>
+                      <div data-filter=".logos" class="cbp-filter-item">Logo</div>
+                      <div data-filter=".motion" class="cbp-filter-item">Motion</div>
+                    </div>
+                  </div>
+                  <div id="js-grid-lightbox-gallery" class="cbp">
+                    <div class="cbp-item web-design graphic print motion">
+                      <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                          <img src="images/img1.jpg" alt="" />
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                          <div class="cbp-l-caption-alignCenter">
+                            <div class="cbp-l-caption-body">
+                              <ul class="link-captions no-bottom-space">
+                                <li>
+                                  <a href="folio-single-gallery.html"><i class="ti-link"></i></a>
+                                </li>
+                                <li>
+                                  <a href="images/img1.jpg" class="cbp-lightbox" data-title="Design Object">
+                                    <i class="ti-plus"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--/cbp-caption-->
+                      <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Paper sheet UI</div>
+                        <div class="cbp-l-grid-agency-desc">Landing pages</div>
+                      </div>
+                      <!--/bottom desc-->
+                    </div>
+                    <div class="cbp-item web-design logos identity graphic">
+                      <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                          <img src="images/img2.jpg" alt="" />
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                          <div class="cbp-l-caption-alignCenter">
+                            <div class="cbp-l-caption-body">
+                              <ul class="link-captions no-bottom-space">
+                                <li>
+                                  <a href="folio-single-gallery.html"><i class="ti-link"></i></a>
+                                </li>
+                                <li>
+                                  <a href="images/img2.jpg" class="cbp-lightbox" data-title="Design Object">
+                                    <i class="ti-plus"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--/cbp-caption-->
+                      <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Paper sheet UI</div>
+                        <div class="cbp-l-grid-agency-desc">Landing pages</div>
+                      </div>
+                      <!--/bottom desc-->
+                    </div>
+                    <div class="cbp-item graphic print identity">
+                      <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                          <img src="images/img10.jpg" alt="" />
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                          <div class="cbp-l-caption-alignCenter">
+                            <div class="cbp-l-caption-body">
+                              <ul class="link-captions no-bottom-space">
+                                <li>
+                                  <a href="folio-single-gallery.html"><i class="ti-link"></i></a>
+                                </li>
+                                <li>
+                                  <a href="images/img10.jpg" class="cbp-lightbox" data-title="Design Object">
+                                    <i class="ti-plus"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--/cbp-caption-->
+                      <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Paper sheet UI</div>
+                        <div class="cbp-l-grid-agency-desc">Landing pages</div>
+                      </div>
+                      <!--/bottom desc-->
+                    </div>
+                    <div class="cbp-item web-design motion logos">
+                      <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                          <img src="images/img3.jpg" alt="" />
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                          <div class="cbp-l-caption-alignCenter">
+                            <div class="cbp-l-caption-body">
+                              <ul class="link-captions no-bottom-space">
+                                <li>
+                                  <a href="folio-single-gallery.html"><i class="ti-link"></i></a>
+                                </li>
+                                <li>
+                                  <a href="images/img3.jpg" class="cbp-lightbox" data-title="Design Object">
+                                    <i class="ti-plus"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--/cbp-caption-->
+                      <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Paper sheet UI</div>
+                        <div class="cbp-l-grid-agency-desc">Landing pages</div>
+                      </div>
+                      <!--/bottom desc-->
+                    </div>
+                    <div class="cbp-item identity graphic print">
+                      <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                          <img src="images/img4.jpg" alt="" />
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                          <div class="cbp-l-caption-alignCenter">
+                            <div class="cbp-l-caption-body">
+                              <ul class="link-captions no-bottom-space">
+                                <li>
+                                  <a href="folio-single-gallery.html"><i class="ti-link"></i></a>
+                                </li>
+                                <li>
+                                  <a href="images/img4.jpg" class="cbp-lightbox" data-title="Design Object">
+                                    <i class="ti-plus"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--/cbp-caption-->
+                      <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Paper sheet UI</div>
+                        <div class="cbp-l-grid-agency-desc">Landing pages</div>
+                      </div>
+                      <!--/bottom desc-->
+                    </div>
+                    <div class="cbp-item motion print logos web-design">
+                      <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                          <img src="images/img5.jpg" alt="" />
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                          <div class="cbp-l-caption-alignCenter">
+                            <div class="cbp-l-caption-body">
+                              <ul class="link-captions no-bottom-space">
+                                <li>
+                                  <a href="folio-single-gallery.html"><i class="ti-link"></i></a>
+                                </li>
+                                <li>
+                                  <a href="images/img5.jpg" class="cbp-lightbox" data-title="Design Object">
+                                    <i class="ti-plus"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--/cbp-caption-->
+                      <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Paper sheet UI</div>
+                        <div class="cbp-l-grid-agency-desc">Landing pages</div>
+                      </div>
+                      <!--/bottom desc-->
+                    </div>
+                    <div class="cbp-item graphic logos">
+                      <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                          <img src="images/img6.jpg" alt="" />
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                          <div class="cbp-l-caption-alignCenter">
+                            <div class="cbp-l-caption-body">
+                              <ul class="link-captions no-bottom-space">
+                                <li>
+                                  <a href="folio-single-gallery.html"><i class="ti-link"></i></a>
+                                </li>
+                                <li>
+                                  <a href="images/img6.jpg" class="cbp-lightbox" data-title="Design Object">
+                                    <i class="ti-plus"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--/cbp-caption-->
+                      <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Paper sheet UI</div>
+                        <div class="cbp-l-grid-agency-desc">Landing pages</div>
+                      </div>
+                      <!--/bottom desc-->
+                    </div>
+                    <div class="cbp-item identity print logos motion">
+                      <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                          <img src="images/img7.jpg" alt="" />
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                          <div class="cbp-l-caption-alignCenter">
+                            <div class="cbp-l-caption-body">
+                              <ul class="link-captions no-bottom-space">
+                                <li>
+                                  <a href="folio-single-gallery.html"><i class="ti-link"></i></a>
+                                </li>
+                                <li>
+                                  <a href="images/img7.jpg" class="cbp-lightbox" data-title="Design Object">
+                                    <i class="ti-plus"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--/cbp-caption-->
+                      <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Paper sheet UI</div>
+                        <div class="cbp-l-grid-agency-desc">Landing pages</div>
+                      </div>
+                      <!--/bottom desc-->
+                    </div>
+                    <div class="cbp-item identity motion web-design">
+                      <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                          <img src="images/img9.jpg" alt="" />
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                          <div class="cbp-l-caption-alignCenter">
+                            <div class="cbp-l-caption-body">
+                              <ul class="link-captions no-bottom-space">
+                                <li>
+                                  <a href="folio-single-gallery.html"><i class="ti-link"></i></a>
+                                </li>
+                                <li>
+                                  <a href="images/img9.jpg" class="cbp-lightbox" data-title="Design Object">
+                                    <i class="ti-plus"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--/cbp-caption-->
+                      <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Paper sheet UI</div>
+                        <div class="cbp-l-grid-agency-desc">Landing pages</div>
+                      </div>
+                      <!--/bottom desc-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </article>
           <!-- post article-->
         </div>
@@ -86,82 +364,110 @@
           <!--/col-->
 
           <div class="col-md-3 mb40">
-            <!-- link that opens popup -->
-            <a class="popup-content btn btn-outline-secondary" href="#popup-register">Edit Profile</a>
-            <!-- form itself -->
-            <div id="popup-register" class="mfp-hide popup-content-area white-popup">
-              <h4>Edit Profile</h4>
-              <hr />
-              <form v-on:click="showUser(currentUser)">
-                <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" v-model="currentUser.name" class="form-control" id="name" placeholder="Name" />
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#editUserModal">
+              Edit Profile
+            </button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="editUserModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="editUserModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editUserModalLabel">Edit Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form v-on:click="showUser(currentUser)">
+                      <div class="form-group">
+                        <label for="name">Name</label>
+                        <input
+                          type="text"
+                          v-model="currentUser.name"
+                          class="form-control"
+                          id="name"
+                          placeholder="Name"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="email1">Email</label>
+                        <input
+                          type="password"
+                          v-model="currentUser.email"
+                          class="form-control"
+                          id="email1"
+                          placeholder="Email"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label type="age-group" class="form-control" id="age-group" placeholder="Age Group">
+                          Age Group
+                        </label>
+                        <select v-model="currentUser.age_group">
+                          <option disabled value="">Please select one</option>
+                          <option value="18-35">18-35</option>
+                          <option value="36-50">36-50</option>
+                          <option value="51+">51+</option>
+                        </select>
+                        <span>Selected: {{ selected }}</span>
+                      </div>
+                      <div class="form-group">
+                        <label for="location">Location</label>
+                        <input
+                          type="location"
+                          v-model="currentUser.location"
+                          class="form-control"
+                          id="location"
+                          placeholder="Location"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="diagnosis-date">Diagnosis Date(yyyy-mm-dd):</label>
+                        <input
+                          type="diagnosis-date"
+                          v-model="currentUser.diagnosis_date"
+                          class="form-control"
+                          id="diagnosis-date"
+                          placeholder="Diagnosis Date"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="profile-picture">Profile Picture URL</label>
+                        <input
+                          type="profile-picture"
+                          v-model="currentUser.image_url"
+                          class="form-control"
+                          id="profile-picture"
+                          placeholder="Profile Picture"
+                        />
+                      </div>
+                      <div class="clearfix">
+                        <label class="custom-control float-left custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+                          <input type="checkbox" class="custom-control-input" />
+                          <span class="custom-control-indicator"></span>
+                        </label>
+                        <button
+                          v-on:click="updateUser(currentUser)"
+                          type="submit"
+                          class="btn btn-primary float-right"
+                          title="Close (Esc)"
+                        >
+                          Update
+                        </button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="email1">Email</label>
-                  <input
-                    type="password"
-                    v-model="currentUser.email"
-                    class="form-control"
-                    id="email1"
-                    placeholder="Email"
-                  />
-                </div>
-                <div class="form-group">
-                  <label type="age-group" class="form-control" id="age-group" placeholder="Age Group">Age Group</label>
-                  <select v-model="currentUser.age_group">
-                    <option disabled value="">Please select one</option>
-                    <option value="18-35">18-35</option>
-                    <option value="36-50">36-50</option>
-                    <option value="51+">51+</option>
-                  </select>
-                  <span>Selected: {{ selected }}</span>
-                </div>
-                <div class="form-group">
-                  <label for="location">Location</label>
-                  <input
-                    type="location"
-                    v-model="currentUser.location"
-                    class="form-control"
-                    id="location"
-                    placeholder="Location"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="diagnosis-date">Diagnosis Date(yyyy-mm-dd):</label>
-                  <input
-                    type="diagnosis-date"
-                    v-model="currentUser.diagnosis_date"
-                    class="form-control"
-                    id="diagnosis-date"
-                    placeholder="Diagnosis Date"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="profile-picture">Profile Picture URL</label>
-                  <input
-                    type="profile-picture"
-                    v-model="currentUser.image_url"
-                    class="form-control"
-                    id="profile-picture"
-                    placeholder="Profile Picture"
-                  />
-                </div>
-                <div class="clearfix">
-                  <label class="custom-control float-left custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                    <input type="checkbox" class="custom-control-input" />
-                    <span class="custom-control-indicator"></span>
-                  </label>
-                  <button
-                    v-on:click="updateUser(currentUser)"
-                    type="submit"
-                    class="btn btn-primary float-right"
-                    title="Close (Esc)"
-                  >
-                    Update
-                  </button>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
 
