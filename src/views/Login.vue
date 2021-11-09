@@ -1,6 +1,41 @@
 <template>
   <div class="login">
-    <form v-on:submit.prevent="submit()">
+    <div
+      class="bg-parallax parallax-overlay accounts-page"
+      data-jarallax='{"speed": 0.2}'
+      style="background-image: url('images/bg6.jpg')"
+    >
+      <div class="container">
+        <div class="row pb30">
+          <div class="col-lg-4 col-md-6 mr-auto ml-auto col-sm-8">
+            <h3 class="text-white text-center mb30">Login to continue</h3>
+            <form v-on:submit.prevent="submit()">
+              <ul>
+                <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+              </ul>
+              <div class="form-group">
+                <input type="email" v-model="newSessionParams.email" class="form-control" placeholder="Email" />
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  v-model="newSessionParams.password"
+                  class="form-control"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="form-group">
+                <button type="submit" value="Submit" class="btn btn-rounded btn-primary btn-block">Sign In</button>
+              </div>
+              <!-- <div class="text-center"><a href="#" class="btn btn-link btn-block">Having trouble logging in?</a></div> -->
+              <hr />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- My code -->
+    <!-- <form v-on:submit.prevent="submit()">
       <h1>Login</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
@@ -14,7 +49,7 @@
         <input type="password" v-model="newSessionParams.password" />
       </div>
       <input type="submit" value="Submit" />
-    </form>
+    </form> -->
   </div>
 </template>
 

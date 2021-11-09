@@ -27,7 +27,7 @@
                 aria-expanded="false"
                 href="#"
               >
-                <router-link to="/">Home</router-link>
+                <router-link style="color: #000000b3" to="/">Home</router-link>
               </a>
             </li>
             <li v-if="!isLoggedIn()" class="nav-item dropdown dropdown-full-width">
@@ -38,7 +38,7 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <router-link to="/signup">Signup</router-link>
+                <router-link style="color: #000000b3" to="/signup">Signup</router-link>
               </a>
             </li>
             <li v-if="!isLoggedIn()" class="nav-item dropdown dropdown-full-width">
@@ -49,7 +49,7 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <router-link to="/login">Login</router-link>
+                <router-link style="color: #000000b3" to="/login">Login</router-link>
               </a>
             </li>
             <li v-if="isLoggedIn()" class="nav-item dropdown dropdown-full-width">
@@ -60,7 +60,7 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <router-link :to="`/users/${userID()}`">My Profile</router-link>
+                <router-link style="color: #000000b3" :to="`/users/${userID()}`">My Profile</router-link>
               </a>
             </li>
             <li v-if="isLoggedIn()" class="nav-item dropdown dropdown-full-width">
@@ -101,7 +101,7 @@
                 aria-expanded="false"
                 href="#"
               >
-                <router-link to="/logout">Logout</router-link>
+                <router-link style="color: #000000b3" to="/logout">Logout</router-link>
               </a>
             </li>
           </ul>

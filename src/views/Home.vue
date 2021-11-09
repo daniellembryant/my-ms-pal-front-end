@@ -199,6 +199,14 @@
         <!--/col-->
       </div>
     </div>
+    <div class="bg-faded">
+      <div class="container pt100 pb60">
+        <div class="title-heading1 mb40">
+          <h3>Inspirational Quotes</h3>
+          <h2>{{ `"${quotes.content}"  ${quotes.author}` }}</h2>
+        </div>
+      </div>
+    </div>
 
     <!-- My code -->
     <!-- <h1>{{ message }}</h1>

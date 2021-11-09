@@ -8,10 +8,12 @@
             <router-link :to="`/groups/${group.id}/edit`" v-if="user.admin">Edit Group Information</router-link>
             <br />
             <br />
-            <button v-if="user.admin" v-on:click="destroyGroup">Delete Group</button>
+            <button v-if="user.admin" v-on:click="destroyGroup" class="btn btn-outline-secondary">Delete Group</button>
             <br />
             <br />
-            <button v-if="group.member" v-on:click="destroyUserGroup">Leave Group</button>
+            <button v-if="group.member" v-on:click="destroyUserGroup" class="btn btn-outline-secondary">
+              Leave Group
+            </button>
             <button v-else v-on:click="createUserGroup">Join Group</button>
           </div>
           <!--/col-->
@@ -37,7 +39,11 @@
                   <br />
                   {{ `created ${relativeDate(message.created_at)}` }}
                   <br />
-                  <button v-if="user.id == message.user_id || user.admin" v-on:click="destroyMessage(message)">
+                  <button
+                    v-if="user.id == message.user_id || user.admin"
+                    class="btn btn-outline-secondary"
+                    v-on:click="destroyMessage(message)"
+                  >
                     Delete Message
                   </button>
                 </div>
@@ -52,7 +58,7 @@
                   <input type="text" v-model="newMessageParams.body" />
                 </div>
                 <div>
-                  <input type="submit" value="Add Message" />
+                  <button type="submit" class="btn btn-outline-secondary">Add Message</button>
                 </div>
               </form>
             </ul>

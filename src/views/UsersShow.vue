@@ -44,7 +44,7 @@
           <!-- post article-->
         </div>
         <div class="col-md-3 mb40">
-          <button v-on:click="showUser(currentUser)">Edit Profile</button>
+          <button v-on:click="showUser(currentUser)" class="btn btn-outline-secondary">Edit Profile</button>
           <dialog id="edit-profile">
             <form method="dialog">
               <h1>Edit Profile</h1>
@@ -87,7 +87,7 @@
 
           <div class="mb40">
             <br />
-            <button v-on:click="destroyUser()">Delete Profile</button>
+            <button v-on:click="destroyUser()" class="btn btn-outline-secondary">Delete Profile</button>
             <br />
             <br />
           </div>
