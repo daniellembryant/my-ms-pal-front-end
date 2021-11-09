@@ -13,9 +13,9 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="classic-template/html/index.html">
-          <img class="logo logo-dark" src="classic-template/html/images/logo.png" alt="" />
-          <img class="logo logo-light hidden-md-down" src="classic-template/html/images/logo-light.png" alt="" />
+        <a class="navbar-brand" href="/classic-template/html/classic-template/html/index.html">
+          <img class="logo logo-dark" src="" alt="" />
+          <img class="logo logo-light hidden-md-down" src="" alt="" />
         </a>
         <div id="navbarNavDropdown" class="navbar-collapse collapse">
           <ul class="navbar-nav ml-auto">
