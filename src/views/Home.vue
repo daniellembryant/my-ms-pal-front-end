@@ -36,8 +36,8 @@
             <h3>Join the Community</h3>
           </div>
           <p class="lead mb50 text-center">
-            Connect with those who have Multiple Sclerosis(MS) and learn more about the disease so you can continue to
-            live the life you want to live
+            Connect with those who have Multiple Sclerosis(MS), read the latest news about MS, and get inspiration when
+            you need it the most.
           </p>
         </div>
       </div>

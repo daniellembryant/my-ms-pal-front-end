@@ -9,7 +9,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="search by location"
+                  placeholder="search"
                   aria-label="Email Id"
                   aria-describedby="basic-addon2"
                   v-model="locationFilter"
@@ -28,7 +28,7 @@
         <div class="col-md-9">
           <article
             class="article-post mb70"
-            v-for="group in orderBy(filterBy(groups, locationFilter, 'location'), sortAttribute, sortOrder)"
+            v-for="group in orderBy(filterBy(groups, locationFilter, 'location', 'name'), sortAttribute, sortOrder)"
             v-bind:key="group.id"
           >
             <a class="post-thumb mb30" href="#">
