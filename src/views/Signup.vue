@@ -21,7 +21,13 @@
               </div>
               <div class="form-group">
                 <label class="age-group">Age Group</label>
-                <select type="age-group" v-model="newUserParams.age_group" class="form-control">
+                <!-- <input
+                  type="age-group"
+                  v-model="newUserParams.age_group"
+                  class="form-control"
+                  placeholder="Age Group"
+                /> -->
+                <select type="age-group" v-model="newUserParams.age_group" class="form-control" placeholder="Age Group">
                   <option disabled value="">Please select one</option>
                   <option value="18-35">18-35</option>
                   <option value="36-50">36-50</option>

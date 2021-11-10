@@ -16,6 +16,7 @@
               <div class="form-group">
                 <input type="name" v-model="newGroupParams.name" class="form-control" placeholder="Name" />
               </div>
+
               <div class="form-group">
                 <input type="summary" v-model="newGroupParams.summary" class="form-control" placeholder="Summary" />
               </div>

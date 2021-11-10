@@ -43,7 +43,7 @@
                       <div class="form-group">
                         <label for="email1">Email</label>
                         <input
-                          type="password"
+                          type="text"
                           v-model="currentUser.email"
                           class="form-control"
                           id="email1"
@@ -152,9 +152,11 @@
 
           <div class="post-content">
             <ul class="post-meta list-inline">
-              <li class="list-inline-item">Location: {{ currentUser.location }}</li>
-              <li class="list-inline-item">Diagnosis Date: {{ currentUser.diagnosis_date }}</li>
-              <li class="list-inline-item">Age Group: {{ currentUser.age_group }}</li>
+              <b>
+                <li class="list-inline-item">Location: {{ currentUser.location }}</li>
+                <li class="list-inline-item">Diagnosis Date: {{ currentUser.diagnosis_date }}</li>
+                <li class="list-inline-item">Age Group: {{ currentUser.age_group }}</li>
+              </b>
             </ul>
             <!-- <p>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
@@ -176,7 +178,7 @@
                     <img class="card-img-top img-fluid" :src="group.image_url" :alt="group.name" />
                     <div class="card-body">
                       <h4 class="card-title">{{ group.name }}</h4>
-                      <router-link style="color: purple" :to="`/groups/${group.id}`">Go to Group</router-link>
+                      <router-link style="color: purple" :to="`/groups/${group.id}`">Group Details</router-link>
                     </div>
                   </div>
                 </div>
@@ -275,7 +277,7 @@ export default {
   mixins: [Vue2Filters.mixin],
   data: function () {
     return {
-      currentUser: {},
+      currentUser: { groups: [] },
       groups: [],
       quotes: [],
       articles: [],
