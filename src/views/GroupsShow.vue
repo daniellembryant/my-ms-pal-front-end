@@ -211,14 +211,11 @@ export default {
     },
     destroyGroup: function () {
       if (confirm("Are you sure you want to delete this group?")) {
-        console.log("User said yes");
-      } else {
-        console.log("User said no");
+        axios.delete(`/groups/${this.group.id}`).then((response) => {
+          console.log(response.data);
+          this.$router.push("/groups");
+        });
       }
-      axios.delete(`/groups/${this.group.id}`).then((response) => {
-        console.log(response.data);
-        this.$router.push("/groups");
-      });
     },
 
     createMessage: function () {
