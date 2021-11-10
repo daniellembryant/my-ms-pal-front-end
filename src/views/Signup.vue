@@ -3,7 +3,7 @@
     <div
       class="bg-parallax parallax-overlay accounts-page"
       data-jarallax='{"speed": 0.2}'
-      style="background-image: url('images/bg6.jpg')"
+      style="background-image: url('images/signupfolks.jpg')"
     >
       <div class="container">
         <div class="row pb30">
@@ -20,7 +20,7 @@
                 <input type="email" v-model="newUserParams.email" class="form-control" placeholder="Email" />
               </div>
               <div class="form-group">
-                <label>Age Group</label>
+                <label class="age-group">Age Group</label>
                 <select type="age-group" v-model="newUserParams.age_group" class="form-control">
                   <option disabled value="">Please select one</option>
                   <option value="18-35">18-35</option>

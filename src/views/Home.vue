@@ -44,7 +44,7 @@
       <div class="row no-margin">
         <div class="col-lg-3 col-md-6 mb30 no-padding">
           <div class="team-card">
-            <img src="/classic-template/html/images/women-2.jpg" alt="" class="img-fluid" />
+            <img src="/images/group-of-women.jpg" alt="" class="img-fluid" />
             <div class="team-overlay align-items-center">
               <div class="team-detail">
                 <h4>Make New Friends</h4>
@@ -57,7 +57,7 @@
         <!--/col-->
         <div class="col-lg-3 col-md-6 mb30 no-padding">
           <div class="team-card">
-            <img src="/classic-template/html/images/guys-laughing.jpg" alt="" class="img-fluid" />
+            <img src="/images/guys-laughing.jpg" alt="" class="img-fluid" />
             <div class="team-overlay align-items-center">
               <div class="team-detail">
                 <h4>Build New Relationships</h4>
@@ -70,7 +70,7 @@
         <!--/col-->
         <div class="col-lg-3 col-md-6 mb30 no-padding">
           <div class="team-card">
-            <img src="/classic-template/html/images/optimism.jpg" alt="" class="img-fluid" />
+            <img src="/images/black-door.jpg" alt="" class="img-fluid" />
             <div class="team-overlay align-items-center">
               <div class="team-detail">
                 <h4>Stay Motivated</h4>
@@ -83,7 +83,7 @@
         <!--/col-->
         <div class="col-lg-3 col-md-6 mb30 no-padding">
           <div class="team-card">
-            <img src="/classic-template/html/images/couple-dancing.jpg" alt="" class="img-fluid" />
+            <img src="/images/couple-dancing.jpg" alt="" class="img-fluid" />
             <div class="team-overlay align-items-center">
               <div class="team-detail">
                 <h4>Stay Connected</h4>

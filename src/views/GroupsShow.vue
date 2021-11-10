@@ -5,8 +5,8 @@
         <div class="col-md-3 mb40">
           <div class="mb40">
             <!-- Insert Edit Group and Group Delete -->
-            <button class="btn btn-outline-secondary">
-              <router-link style="color: #000000b3" :to="`/groups/${group.id}/edit`" v-if="user.admin">
+            <button v-if="user.admin" class="btn btn-outline-secondary">
+              <router-link style="color: purple" :to="`/groups/${group.id}/edit`" v-if="user.admin">
                 Edit Group
               </router-link>
             </button>
@@ -18,11 +18,11 @@
             <button v-if="group.member" v-on:click="destroyUserGroup" class="btn btn-outline-secondary">
               Leave Group
             </button>
-            <button v-else v-on:click="createUserGroup">Join Group</button>
+            <button v-else v-on:click="createUserGroup" class="btn btn-outline-secondary">Join Group</button>
           </div>
           <!--/col-->
           <div class="mb40">
-            <h4 class="sidebar-title">Group Memebers</h4>
+            <h4 class="sidebar-title">Group Members</h4>
             <ul class="list-unstyled">
               <li class="">
                 <div v-for="user in group.users" v-bind:key="user.id" class="media-body">
@@ -36,7 +36,7 @@
             <h4 class="sidebar-title">Group Messages</h4>
             <ul class="list-unstyled">
               <li class="">
-                <div v-for="message in group.messages" v-bind:key="message.id" class="media-body">
+                <div v-for="message in group.messages" v-bind:key="message.id" class="media-body media-body-group">
                   {{ message.body }}
                   <br />
                   {{ message.user.name }}
@@ -59,7 +59,7 @@
                 <div>
                   <br />
                   <h4>New Message:</h4>
-                  <input type="text" v-model="newMessageParams.body" />
+                  <input class="media-body-group" type="text" v-model="newMessageParams.body" />
                 </div>
                 <div>
                   <button type="submit" class="btn btn-outline-secondary">Add Message</button>
@@ -70,27 +70,24 @@
         </div>
         <div class="col-md-9">
           <article class="article-post mb70">
-            <a class="post-thumb mb30" href="#">
-              <img :src="group.image_url" alt="" class="img-fluid" />
-            </a>
+            <div class="post-thumb mb30">
+              <img :src="group.image_url" :alt="group.meeting_notes" class="img-fluid" />
+            </div>
             <!--thumb-->
             <div class="post-content">
               <a href="#">
                 <h2 class="post-title">{{ group.name }}</h2>
               </a>
-              {{ group.summary }}
-              <br />
-              {{ group.location }}
-              <br />
-              {{ group.meeting_notes }}
-              <br />
+              <p>{{ group.summary }}</p>
+              <p>{{ group.location }}</p>
+              <p class="media-body-group">{{ group.meeting_notes }}</p>
               <button class="btn btn-outline-secondary">
                 <a
                   :href="group.meeting_url"
                   v-bind:key="group.meeting_url"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style="color: #000000b3"
+                  style="color: purple"
                 >
                   Click to Join Meeting
                 </a>

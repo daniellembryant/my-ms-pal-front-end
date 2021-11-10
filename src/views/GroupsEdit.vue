@@ -3,7 +3,7 @@
     <div
       class="bg-parallax parallax-overlay accounts-page"
       data-jarallax='{"speed": 0.2}'
-      style="background-image: url('/images/bg6.jpg')"
+      style="background-image: url('/images/hands-raising.jpg')"
     >
       <div class="container">
         <div class="row pb30">

@@ -11,6 +11,10 @@
   font-style: normal;
 }
 
+.media-body-group {
+  margin-bottom: 20px;
+}
+
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -9784,6 +9788,7 @@ mark {
 
 .list-inline-item {
   display: inline-block;
+  color: black;
 }
 
 .list-inline-item:not(:last-child) {
@@ -12637,7 +12642,7 @@ input[type=submit].btn-block {
   position: relative;
 }
 
-.dropdown-toggle::after {
+/* .dropdown-toggle::after {
   display: inline-block;
   width: 0;
   height: 0;
@@ -12648,7 +12653,7 @@ input[type=submit].btn-block {
   border-right: .3em solid transparent;
   border-bottom: 0;
   border-left: .3em solid transparent;
-}
+} */
 
 .dropdown-toggle:empty::after {
   margin-left: 0;
@@ -13982,7 +13987,8 @@ input[type=submit].btn-block {
 }
 
 .navbar-light .navbar-brand {
-  color: rgba(0,0,0,.9);
+  color: purple;
+  font-weight: bold;
 }
 
 .navbar-light .navbar-brand:focus,
