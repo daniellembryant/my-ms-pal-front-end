@@ -1,6 +1,62 @@
 <template>
   <div class="groups-edit">
-    <form v-on:submit.prevent="updateGroup()">
+    <div
+      class="bg-parallax parallax-overlay accounts-page"
+      data-jarallax='{"speed": 0.2}'
+      style="background-image: url('/images/hands-raising.jpg')"
+    >
+      <div class="container">
+        <div class="row pb30">
+          <div class="mr-auto ml-auto col-sm-12">
+            <h3 class="text-white text-center mb30">Edit Group Information</h3>
+            <form v-on:submit.prevent="updateGroup()">
+              <ul>
+                <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+              </ul>
+              <div class="form-group">
+                <input type="name" v-model="editGroupParams.name" class="form-control" placeholder="Name" />
+              </div>
+              <div class="form-group">
+                <input type="summary" v-model="editGroupParams.summary" class="form-control" placeholder="Summary" />
+              </div>
+              <div class="form-group">
+                <input type="location" v-model="editGroupParams.location" class="form-control" placeholder="Location" />
+              </div>
+              <div class="form-group">
+                <input
+                  type="meeting-notes"
+                  v-model="editGroupParams.meeting_notes"
+                  class="form-control"
+                  placeholder="Meeting Notes"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="meeting-url"
+                  v-model="editGroupParams.meeting_url"
+                  class="form-control"
+                  placeholder="Meeting Link"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="group-image-url"
+                  v-model="editGroupParams.image_url"
+                  class="form-control"
+                  placeholder="Group Image URL"
+                />
+              </div>
+              <div class="form-group">
+                <button type="submit" value="Update" class="btn btn-rounded btn-primary btn-block">Update</button>
+              </div>
+              <hr />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- My Code -->
+    <!-- <form v-on:submit.prevent="updateGroup()">
       <h1>Edit Group</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
@@ -31,7 +87,7 @@
         <input type="image_url" v-model="editGroupParams.image_url" />
       </div>
       <input type="submit" value="Update" />
-    </form>
+    </form> -->
   </div>
 </template>
 
