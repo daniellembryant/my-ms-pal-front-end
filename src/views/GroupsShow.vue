@@ -78,9 +78,15 @@
               <a href="#">
                 <h2 class="post-title">{{ group.name }}</h2>
               </a>
-              <p>{{ group.summary }}</p>
-              <p>{{ group.location }}</p>
-              <p class="media-body-group">{{ group.meeting_notes }}</p>
+              <b>
+                <p>{{ group.summary }}</p>
+              </b>
+              <b>
+                <p>{{ group.location }}</p>
+              </b>
+              <b>
+                <p class="media-body-group">{{ group.meeting_notes }}</p>
+              </b>
               <button class="btn btn-outline-secondary">
                 <a
                   :href="group.meeting_url"
