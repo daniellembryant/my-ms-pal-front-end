@@ -27,29 +27,12 @@
               <div class="form-group">
                 <button type="submit" value="Submit" class="btn btn-rounded btn-primary btn-block">Sign In</button>
               </div>
-              <!-- <div class="text-center"><a href="#" class="btn btn-link btn-block">Having trouble logging in?</a></div> -->
               <hr />
             </form>
           </div>
         </div>
       </div>
     </div>
-    <!-- My code -->
-    <!-- <form v-on:submit.prevent="submit()">
-      <h1>Login</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Email:</label>
-        <input type="email" v-model="newSessionParams.email" />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" v-model="newSessionParams.password" />
-      </div>
-      <input type="submit" value="Submit" />
-    </form> -->
   </div>
 </template>
 

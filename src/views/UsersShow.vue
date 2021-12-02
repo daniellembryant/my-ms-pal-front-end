@@ -143,12 +143,13 @@
             </li>
           </div>
         </div>
+        <!-- Code to review -->
         <div class="col-md-9 mb40">
           <h2>{{ `Welcome back ${currentUser.name}!` }}</h2>
           <br />
           <h4>{{ `Inspirational Quote: "${quotes.content}"  ${quotes.author}` }}</h4>
           <br />
-          <img :src="currentUser.image_url" alt="" class="img-fluid mb30" />
+          <img :src="currentUser.image_url" alt="user profile picture" class="img-fluid mb30" />
 
           <div class="post-content">
             <ul class="post-meta list-inline">
@@ -158,12 +159,6 @@
                 <li class="list-inline-item">Age Group: {{ currentUser.age_group }}</li>
               </b>
             </ul>
-            <!-- <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
-                felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede
-                justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
-              </p> -->
             <h4>Your Groups</h4>
             <div class="container mb40">
               <div class="row">
@@ -180,6 +175,7 @@
                       <h4 class="card-title">{{ group.name }}</h4>
                       <router-link style="color: purple" :to="`/groups/${group.id}`">Group Details</router-link>
                     </div>
+                    <!-- End of code to review -->
                   </div>
                 </div>
               </div>
@@ -188,77 +184,6 @@
         </div>
       </div>
     </div>
-
-    <!-- My Code -->
-    <!-- <button v-on:click="showUser(currentUser)">Edit Profile</button> -->
-    <!-- <dialog id="edit-profile">
-      <form method="dialog">
-        <h1>Edit Profile</h1>
-        <p>
-          Name:
-          <input type="text" v-model="currentUser.name" />
-        </p>
-        <p>
-          Email:
-          <input type="text" v-model="currentUser.email" />
-        </p>
-        <p>
-          Age Group:
-          <select v-model="currentUser.age_group">
-            <option disabled value="">Please select one</option>
-            <option value="18-35">18-35</option>
-            <option value="36-50">36-50</option>
-            <option value="51+">51+</option>
-          </select>
-          <span>Selected: {{ selected }}</span>
-        </p>
-        <p>
-          Location:
-          <input type="text" v-model="currentUser.location" />
-        </p>
-        <p>
-          Diagnosis Date (yyyy-mm-dd):
-          <input type="text" v-model="currentUser.diagnosis_date" />
-        </p>
-        <p>
-          Profile Picture:
-          <input type="text" v-model="currentUser.image_url" />
-        </p>
-        <button v-on:click="updateUser(currentUser)">Update</button>
-        <button>Close</button>
-      </form>
-    </dialog> -->
-
-    <!-- <br /> -->
-
-    <!-- <button v-on:click="destroyUser()">Delete Profile</button> -->
-
-    <!-- <h1>{{ `Welcome back ${currentUser.name}!` }}</h1> -->
-    <!-- Articles -->
-    <!-- <h2>Latest Articles Concerning MS</h2> -->
-    <!-- <ul>
-      <div v-for="article in articles.slice(1, 5)" v-bind:key="article.id">
-        <a :href="article.url" v-bind:key="article.url" target="_blank" rel="noopener noreferrer">
-          {{ article.title }}
-          {{ article.author }}
-        </a>
-      </div>
-    </ul> -->
-
-    <!-- Inspirational Quotes API -->
-    <!-- <h2>{{ `Inspirational Quote: "${quotes.content}"  ${quotes.author}` }}</h2> -->
-
-    <!-- <img :src="currentUser.image_url" alt="profile picture" /> -->
-    <!-- <p>Location: {{ currentUser.location }}</p> -->
-    <!-- <p>Age Group: {{ currentUser.age_group }}</p> -->
-    <!-- <p>Diagnosis Date (yyyy-mm-dd): {{ currentUser.diagnosis_date }}</p> -->
-    <!-- Show what groups a user belongs to -->
-    <!-- <h4>Your Groups</h4> -->
-    <!-- <div v-for="group in orderBy(currentUser.groups, 'name')" v-bind:key="group.id"> -->
-    <!-- {{ group.name }} -->
-    <!-- <br /> -->
-    <!-- <img :src="group.image_url" alt="group image" /> -->
-    <!-- </div> -->
   </div>
 </template>
 
@@ -288,7 +213,6 @@ export default {
     axios
       .get(`/users/${this.$route.params.id}`)
       .then((response) => {
-        console.log(response.data);
         this.currentUser = response.data;
       })
       .catch((error) => console.log(error));
@@ -313,7 +237,6 @@ export default {
     showUser: function (user) {
       console.log(user);
       this.currentUser = user;
-      // document.querySelector("#edit-profile").showModal();
     },
     destroyUser: function () {
       if (confirm("Are you sure you want to delete your profile?")) {
@@ -326,19 +249,16 @@ export default {
     },
     indexGroups: function () {
       axios.get("http://localhost:3000/groups").then((response) => {
-        // console.log(response.data);
         this.groups = response.data;
       });
     },
     indexArticles: function () {
       axios.get("/articles").then((response) => {
-        console.log("articles data", response.data);
         this.articles = response.data;
       });
     },
     indexQuotes: function () {
       axios.get("/quotes").then((response) => {
-        console.log(response.data.content);
         this.quotes = response.data;
       });
     },
