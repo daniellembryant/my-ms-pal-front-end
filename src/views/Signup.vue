@@ -21,12 +21,6 @@
               </div>
               <div class="form-group">
                 <label class="age-group">Age Group</label>
-                <!-- <input
-                  type="age-group"
-                  v-model="newUserParams.age_group"
-                  class="form-control"
-                  placeholder="Age Group"
-                /> -->
                 <select type="age-group" v-model="newUserParams.age_group" class="form-control" placeholder="Age Group">
                   <option disabled value="">Please select one</option>
                   <option value="18-35">18-35</option>
@@ -74,56 +68,6 @@
         </div>
       </div>
     </div>
-    <!-- My code -->
-    <!-- <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul> -->
-    <!-- <div>
-        <label>Name:</label>
-        <input type="text" v-model="newUserParams.name" />
-      </div> -->
-    <!-- <div>
-        <label>Email:</label>
-        <input type="email" v-model="newUserParams.email" />
-      </div> -->
-    <!-- <div> -->
-    <!-- <label>Age Group:</label> -->
-    <!-- Need to insert drop down with age group options -->
-    <!-- <select v-model="newUserParams.age_group">
-          <option disabled value="">Please select one</option>
-          <option value="18-35">18-35</option>
-          <option value="36-50">36-50</option>
-          <option value="51+">51+</option>
-        </select> -->
-    <!-- <span>Selected: {{ selected }}</span> -->
-
-    <!-- <input type="age_group" 
-        v-model="newUserParams.age_group" /> -->
-    <!-- </div> -->
-    <!-- <div>
-        <label>Password:</label>
-        <input type="password" v-model="newUserParams.password" />
-      </div>
-      <div>
-        <label>Password confirmation:</label>
-        <input type="password" v-model="newUserParams.password_confirmation" />
-      </div>
-      <div>
-        <label>Location:</label>
-        <input type="location" v-model="newUserParams.location" />
-      </div>
-      <div>
-        <label>Diagnosis Date (yyyy-mm-dd):</label>
-        <input type="diagnosis_date" v-model="newUserParams.diagnosis_date" />
-      </div>
-      <div>
-        <label>Image URL:</label>
-        <input type="image_url" v-model="newUserParams.image_url" />
-      </div>
-      <input type="submit" value="Submit" />
-    </form> -->
   </div>
 </template>
 

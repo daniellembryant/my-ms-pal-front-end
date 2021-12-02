@@ -55,39 +55,6 @@
         </div>
       </div>
     </div>
-    <!-- My Code -->
-    <!-- <form v-on:submit.prevent="updateGroup()">
-      <h1>Edit Group</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Name:</label>
-        <input type="text" v-model="editGroupParams.name" />
-      </div>
-      <div>
-        <label>Summay:</label>
-        <input type="text" v-model="editGroupParams.summary" />
-      </div>
-      <div>
-        <label>Location:</label>
-        <input type="text" v-model="editGroupParams.location" />
-      </div>
-      <div>
-        <label>Meeting Notes:</label>
-        <input type="text" v-model="editGroupParams.meeting_notes" />
-      </div>
-      <div>
-        <label>Meeting URL:</label>
-        <input type="text" v-model="editGroupParams.meeting_url" />
-      </div>
-
-      <div>
-        <label>Group Image URL:</label>
-        <input type="image_url" v-model="editGroupParams.image_url" />
-      </div>
-      <input type="submit" value="Update" />
-    </form> -->
   </div>
 </template>
 

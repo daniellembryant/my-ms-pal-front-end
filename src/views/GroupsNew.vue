@@ -57,38 +57,6 @@
         </div>
       </div>
     </div>
-    <!-- My code -->
-    <!-- <form v-on:submit.prevent="createGroup()">
-      <h1>New Group</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Name:</label>
-        <input type="text" v-model="newGroupParams.name" />
-      </div>
-      <div>
-        <label>Summay:</label>
-        <input type="text" v-model="newGroupParams.summary" />
-      </div>
-      <div>
-        <label>Location:</label>
-        <input type="text" v-model="newGroupParams.location" />
-      </div>
-      <div>
-        <label>Meeting Notes:</label>
-        <input type="text" v-model="newGroupParams.meeting_notes" />
-      </div>
-      <div>
-        <label>Meeting URL:</label>
-        <input type="text" v-model="newGroupParams.meeting_url" />
-      </div>
-      <div>
-        <label>Group Image URL:</label>
-        <input type="image_url" v-model="newGroupParams.image_url" />
-      </div>
-      <input type="submit" value="Create" />
-    </form> -->
   </div>
 </template>
 

@@ -98,81 +98,12 @@
                   Click to Join Meeting
                 </a>
               </button>
-              <!-- <a href="#" class="btn btn-outline-secondary">Read More</a> -->
             </div>
           </article>
         </div>
       </div>
     </div>
-    <!-- <h1>Group Details</h1>
-    <p>{{ group.name }}</p>
-    <p>{{ group.summary }}</p>
-    <p>{{ group.location }}</p>
-    <p>{{ group.meeting_notes }}</p>
-    <a :href="group.meeting_url" v-bind:key="group.meeting_url" target="_blank" rel="noopener noreferrer">
-      Click to Join Meeting
-    </a>
-    <br />
-
-    <img :src="group.image_url" alt="" /> -->
-    <!-- Should only appear if someone is an admin -->
-    <!-- <div> -->
-    <!-- Group Notification- Need to figure out how to send notifications to group members -->
-    <!-- <div v-for="notification in group.notifications" v-bind:key="notification.id">
-        {{ notification.body }}
-      </div> -->
-    <!-- <form v-on:submit.prevent="createNotification">
-        <ul>
-          <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-        </ul>
-        <div>
-          <h2>Create Notification:</h2>
-          <input type="text" v-model="newNotificationParams.body" />
-        </div>
-        <div>
-          <input type="submit" value="Send Notification" />
-        </div>
-      </form> -->
-    <!-- <br />
-      <router-link :to="`/groups/${group.id}/edit`" v-if="user.admin">Edit Group Information</router-link>
-      <br /> -->
-    <!-- <button v-if="user.admin" v-on:click="destroyGroup">Delete Group</button> -->
-    <!-- </div> -->
-    <!-- Group Members -->
-    <!-- <h2>Members</h2>
-    <div v-for="user in group.users" v-bind:key="user.id">
-      {{ user.name }}
-    </div>
-    <button v-if="group.member" v-on:click="destroyUserGroup">Leave Group</button>
-    <button v-else v-on:click="createUserGroup">Join Group</button> -->
-    <!-- <h2>Group Messages</h2> -->
-    <!-- <div v-for="message in group.messages" v-bind:key="message.id"> -->
-    <!-- {{ message.body }} -->
-    <!-- <br /> -->
-    <!-- {{ message.user.name }} -->
-    <!-- <br /> -->
-    <!-- {{ `created ${relativeDate(message.created_at)}` }} -->
-    <!-- <br /> -->
-    <!-- Delete messages -->
-    <!-- <button v-if="user.id == message.user_id || user.admin" v-on:click="destroyMessage(message)"> -->
-    <!-- Delete Message -->
-    <!-- </button> -->
-    <!-- </div> -->
-    <!-- Message create form -->
-    <!-- <form v-on:submit.prevent="createMessage">
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <h2>New Message:</h2>
-        <input type="text" v-model="newMessageParams.body" />
-      </div>
-      <div>
-        <input type="submit" value="Add Message" />
-      </div>
-    </form> -->
   </div>
-  <!-- </div> -->
 </template>
 
 <style>
@@ -280,33 +211,6 @@ export default {
         console.log("User said no");
       }
     },
-    // createNotification: function () {
-    //   let params = {
-    //     body: this.newNotificationParams.body,
-    //     group_id: this.group.id,
-    //   };
-    //   axios
-    //     .post("/notifications", params)
-    //     .then((response) => {
-    //       console.log(response.data);
-    //       this.group.notifications.push(response.data);
-    //     })
-    //     .catch((error) => {
-    //       this.errors = error.response.data.errors;
-    //     });
-    // },
-    // destroyNotification: function (notification) {
-    //   if (confirm("Are you sure you want to delete this notification?")) {
-    //     console.log("User said yes");
-    //   } else {
-    //     console.log("User said no");
-    //   }
-    //   axios.delete(`/messages/${notification.id}`).then((response) => {
-    //     console.log(response.data);
-    //     let index = this.group.notifications.indexOf(notification);
-    //     this.group.notification.splice(index, 1);
-    //   });
-    // },
   },
 };
 </script>
